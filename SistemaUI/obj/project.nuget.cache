@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "FB+xVdYa6w2wvJaq2yLS5kBRr9plPYC3Lvoho3Fpv3DLItte3Jy3Z0Mp1s2BS45OKwYX4oTelOzrNZ7+Yv23cQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\ejerciciosclase-2d-segundaParte\\LaboSegundaParte\\parziale.jeremias.segundoparcial\\SistemaUI\\SistemaUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jerel\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\system.data.sqlclient\\4.8.4\\system.data.sqlclient.4.8.4.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\jerel\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
