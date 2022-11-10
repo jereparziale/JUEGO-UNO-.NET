@@ -15,6 +15,20 @@ namespace SistemaCore
         bool esMasCuatro;
         int cartasALevantar;
 
+        public CartaAccion()
+        {
+            this.colorCarta = ColorCarta;
+            this.esReversa = EsReversa;
+            this.esSaltaTurno = EsSaltaTurno;
+            this.esMasCuatro = EsMasCuatro;
+            this.esMasDos = EsMasDos;
+            if (!esReversa || !EsSaltaTurno)
+                this.cartasALevantar = 0;
+            else if (esMasDos)
+                this.cartasALevantar = 2;
+            else if (esMasCuatro)
+                this.cartasALevantar = 4;
+        }
         public CartaAccion(EColores colorCarta, bool esReversa, bool esSaltaTurno, bool esMasDos, bool esMasCuatro)
         {
             this.colorCarta = colorCarta;
@@ -30,14 +44,9 @@ namespace SistemaCore
                 this.cartasALevantar = 4;
         }
 
-        public bool SaltaTurno
-        {
-            get { return true; }
-        }
+   
 
-        public EColores ColorCarta { get => colorCarta;}
-        public bool EsReversa { get => esReversa; }
-        public bool EsSaltaTurno { get => esSaltaTurno;  }
+        
 
         public bool PuedeSerPrimerCarta
         {
@@ -47,9 +56,12 @@ namespace SistemaCore
             }
         }
 
-        public bool EsMasDos { get => esMasDos;  }
-        public bool EsMasCuatro { get => esMasCuatro;}
-        public int CartasALevantar { get => cartasALevantar; }
+        public EColores ColorCarta { get => colorCarta; set => colorCarta = value; }
+        public bool EsReversa { get => esReversa; set => esReversa = value; }
+        public bool EsSaltaTurno { get => esSaltaTurno; set => esSaltaTurno = value; }
+        public bool EsMasDos { get => esMasDos; set => esMasDos = value; }
+        public bool EsMasCuatro { get => esMasCuatro; set => esMasCuatro = value; }
+        public int CartasALevantar { get => cartasALevantar; set => cartasALevantar = value; }
 
         public override string ToString()
         {

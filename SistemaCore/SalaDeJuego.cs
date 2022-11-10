@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SistemaCore
@@ -13,6 +14,7 @@ namespace SistemaCore
         Jugador jugador1;
         Jugador jugador2;
         List<Partida> listadoDePartidas;
+        CancellationTokenSource cancelToken;
 
         public SalaDeJuego(string descripcion, Jugador jugador1, Jugador jugador2)
         {
@@ -28,16 +30,29 @@ namespace SistemaCore
         public Partida PartidaEnJuego { get => listadoDePartidas.Last(); }
         public List<Partida> ListadoDePartidas { get => listadoDePartidas; }
 
+        public CancellationTokenSource CancelToken
+        {
+            get
+            {
+                if (cancelToken is null || cancelToken.IsCancellationRequested)
+                {
+                    cancelToken = new CancellationTokenSource();
+                }
+
+                return cancelToken;
+            }
+        }
+
         public override string ToString()
         {
             return descripcion;
         }
 
-        public void Jugar(Action<string, string> delegadoUI, Action<string,Partida> delegadoUIGanador)
+        //PASAR UN CANCELLATIONTOKEN POR PARAMETRO
+        public void Jugar(Action<string, string> delegadoUI, Action<string,Partida> delegadoUIGanador, CancellationToken cT)
         {
             int contador = 0;
-
-            if(ListadoDePartidas.Count>0)
+            if (ListadoDePartidas.Count>0)
             if (PartidaEnJuego.EstadoPartida == EEstadosPartidas.Jugando) //FALTA PAUSADO
                 throw new Exception("Aun se encuentra una partida en juego");
 
@@ -48,12 +63,21 @@ namespace SistemaCore
                 Task.Delay(1000).Wait();
                 PartidaEnJuego.Desarrollo();
                 contador++;
-            } while (contador < 20 && (jugador1.CartasRestantes > 0 && jugador2.CartasRestantes > 0));
+            } while (contador < Sistema.Configuracion.CantidadDeManos && (jugador1.CartasRestantes > 0 && jugador2.CartasRestantes > 0)
+            && !cT.IsCancellationRequested);
             
-            //GANADOR
-            string mensajeGanador= PartidaEnJuego.DeclararGanador();
-            PartidaEnJuego.SbMensajeJuego.Append(mensajeGanador);
-            delegadoUIGanador(mensajeGanador,PartidaEnJuego);
+            if(cT.IsCancellationRequested)
+            {
+                PartidaEnJuego.EstadoPartida = EEstadosPartidas.Cancelado;
+                PartidaEnJuego.SbMensajeJuego.Append("----------PARTIDA CANCELADA----------");
+                delegadoUI(PartidaEnJuego.SbMensajeJuego.ToString(), PartidaEnJuego.SbMensajeCartasEnMesa.ToString());
+            }
+            else
+            {
+                string mensajeGanador = PartidaEnJuego.DeclararGanador();
+                PartidaEnJuego.SbMensajeJuego.Append(mensajeGanador);
+                delegadoUIGanador(mensajeGanador, PartidaEnJuego);
+            }
 
         }
 

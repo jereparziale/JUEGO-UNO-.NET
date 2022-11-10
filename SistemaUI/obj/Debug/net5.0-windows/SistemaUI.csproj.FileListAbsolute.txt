@@ -77,3 +77,4 @@ C:\Users\Monitoreo01\Desktop\parziale.jeremias.segundoparcial\SistemaUI\obj\Debu
 C:\Users\Monitoreo01\Desktop\parziale.jeremias.segundoparcial\SistemaUI\obj\Debug\net5.0-windows\ref\SistemaUI.dll
 C:\Users\jerel\source\repos\ejerciciosclase-2d-segundaParte\LaboSegundaParte\parziale.jeremias.segundoparcial\SistemaUI\obj\Debug\net5.0-windows\SistemaUI.FrmFinPartida.resources
 C:\Users\jerel\source\repos\ejerciciosclase-2d-segundaParte\LaboSegundaParte\parziale.jeremias.segundoparcial\SistemaUI\obj\Debug\net5.0-windows\SistemaUI.FrmEstadisticasSala.resources
+C:\Users\jerel\source\repos\ejerciciosclase-2d-segundaParte\LaboSegundaParte\parziale.jeremias.segundoparcial\SistemaUI\obj\Debug\net5.0-windows\SistemaUI.FrmConfiguracion.resources

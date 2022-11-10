@@ -12,14 +12,17 @@ namespace SistemaCore
         int numeroValor;
         EColores colorCarta;
 
+        public CartaNumerica()
+        {
+            this.numeroValor = NumeroValor;
+            this.colorCarta = ColorCarta;
+        }
         public CartaNumerica(int numeroValor, EColores colorCarta)
         {
             this.numeroValor = numeroValor;
             this.colorCarta = colorCarta;
         }
 
-        public int NumeroValor { get => numeroValor; }
-        public EColores ColorCarta { get => colorCarta;  }
 
         public bool PuedeSerPrimerCarta
         {
@@ -28,6 +31,10 @@ namespace SistemaCore
                 return true;
             }
         }
+
+        public int NumeroValor { get => numeroValor; set => numeroValor = value; }
+        public EColores ColorCarta { get => colorCarta; set => colorCarta = value; }
+
         public override string ToString()
         {
             return $"Carta {this.numeroValor} {this.colorCarta.ToString()}";

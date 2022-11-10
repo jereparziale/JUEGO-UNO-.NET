@@ -37,6 +37,8 @@
             this.btnListadoJugadores = new System.Windows.Forms.Button();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnEstatisticasGlobales = new System.Windows.Forms.Button();
             this.btnJugar = new System.Windows.Forms.Button();
             this.lblNombreSala = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.lstSalas = new System.Windows.Forms.ListBox();
             this.lblSalas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -146,6 +146,30 @@
             this.panel1.Size = new System.Drawing.Size(903, 35);
             this.panel1.TabIndex = 19;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(781, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(122, 35);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Cerrar";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.Location = new System.Drawing.Point(641, 0);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(140, 35);
+            this.btnConfiguracion.TabIndex = 4;
+            this.btnConfiguracion.Text = "Configuracion";
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            // 
             // btnEstatisticasGlobales
             // 
             this.btnEstatisticasGlobales.Dock = System.Windows.Forms.DockStyle.Left;
@@ -195,6 +219,7 @@
             this.btnCancelarPartida.TabIndex = 5;
             this.btnCancelarPartida.Text = "Cancelar";
             this.btnCancelarPartida.UseVisualStyleBackColor = true;
+            this.btnCancelarPartida.Click += new System.EventHandler(this.btnCancelarPartida_Click);
             // 
             // panel3
             // 
@@ -251,29 +276,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(238, 158);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Location = new System.Drawing.Point(641, 0);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(140, 35);
-            this.btnConfiguracion.TabIndex = 4;
-            this.btnConfiguracion.Text = "Configuracion";
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(781, 0);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(122, 35);
-            this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Cerrar";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // Form1
             // 

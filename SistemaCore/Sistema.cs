@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SistemaCore
@@ -12,17 +13,27 @@ namespace SistemaCore
         static List<Usuario> listadoDeUsuarios;
         static List<SalaDeJuego> listadoSalas;
         static Random rdn;
+        static Configuracion configuracion;
+        static Baraja baraja;
 
+        
 
         static Sistema()
         {
             listadoDeUsuarios = UsuariosDAO.ObtenerClientes();
             listadoSalas = new List<SalaDeJuego>();
             rdn = new Random();
+            configuracion = Serializadora<Configuracion>.LeerJSON("config");
+            baraja = Serializadora<Baraja>.LeerJSON("baraja_Datos");
+            baraja.LlenarListaICarta();
         }
+
+        
 
         public static List<Usuario> ListadoDeUsuarios { get => listadoDeUsuarios;}
         public static List<SalaDeJuego> ListadoSalas { get => listadoSalas; }
+        public static Configuracion Configuracion { get => configuracion; set => configuracion = value; }
+        public static Baraja Baraja { get => baraja; }//HACER QUQE RETORNE LA BARAJA MEZCLADA
 
         public static void AgregarSala()
         {
@@ -36,7 +47,6 @@ namespace SistemaCore
             }
             catch (Exception)
             {
-                //MOSTRRAR QUE NO HAY MAS JUGADORES
                 throw;
             }
         }

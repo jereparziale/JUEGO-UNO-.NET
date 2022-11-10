@@ -31,6 +31,7 @@ namespace SistemaCore
             this.jugador1 = jugador1;
             this.jugador2 = jugador2;
             this.baraja = new Baraja();
+            this.baraja.barajaUnoMezclada = Sistema.Baraja.CopiarMezclarBaraja(Sistema.Baraja.barajaUno);
             jugador1.ManoCartasJugador = baraja.RepartirCartasAJugador(7);
             jugador2.ManoCartasJugador = baraja.RepartirCartasAJugador(7);
             this.pozoDeDescarte = new Stack<ICarta>();

@@ -2,6 +2,6 @@
 {
     enum EEstadosPartidas
     {
-        Jugando,Pausado,Finalizado
+        Jugando,Pausado,Finalizado,Cancelado
     }
 }
