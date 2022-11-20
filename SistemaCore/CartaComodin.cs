@@ -9,10 +9,24 @@ namespace SistemaCore
     public class CartaComodin:ICarta
     {
         EColores colorElegido;
+        string pathImagenCarta;
 
         public CartaComodin()
         {
             this.colorElegido = EColores.Negro;
+            this.pathImagenCarta = "../../../assets/comodin.png";
+        }
+
+        public string PathImagenCarta
+        {
+            get
+            {
+                return pathImagenCarta;
+            }
+            set
+            {
+                pathImagenCarta = value;
+            }
         }
 
         public bool PuedeSerPrimerCarta

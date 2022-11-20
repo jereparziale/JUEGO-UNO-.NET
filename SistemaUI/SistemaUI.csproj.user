@@ -7,6 +7,9 @@
     <Compile Update="FrmConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmEstadisticasGlobales.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmEstadisticasSala.cs">
       <SubType>Form</SubType>
     </Compile>

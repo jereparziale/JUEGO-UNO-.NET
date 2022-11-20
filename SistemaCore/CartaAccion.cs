@@ -14,6 +14,7 @@ namespace SistemaCore
         bool esMasDos;
         bool esMasCuatro;
         int cartasALevantar;
+        string pathImagenCarta;
 
         public CartaAccion()
         {
@@ -28,8 +29,9 @@ namespace SistemaCore
                 this.cartasALevantar = 2;
             else if (esMasCuatro)
                 this.cartasALevantar = 4;
+            this.pathImagenCarta = PathImagenCarta;
         }
-        public CartaAccion(EColores colorCarta, bool esReversa, bool esSaltaTurno, bool esMasDos, bool esMasCuatro)
+        public CartaAccion(EColores colorCarta, bool esReversa, bool esSaltaTurno, bool esMasDos, bool esMasCuatro,string pathImagenCarta)
         {
             this.colorCarta = colorCarta;
             this.esReversa = esReversa;
@@ -42,10 +44,23 @@ namespace SistemaCore
                 this.cartasALevantar = 2;
             else if (esMasCuatro)
                 this.cartasALevantar = 4;
+
+            this.pathImagenCarta = pathImagenCarta;
         }
 
    
+        public string PathImagenCarta
+        {
+            get
+            {
+                return pathImagenCarta;
+            }
+            set
+            {
+                pathImagenCarta = value; 
+            }
 
+        }
         
 
         public bool PuedeSerPrimerCarta

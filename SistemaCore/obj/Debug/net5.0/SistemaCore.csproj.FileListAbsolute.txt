@@ -34,3 +34,17 @@ C:\Users\Monitoreo01\Desktop\parziale.jeremias.segundoparcial\SistemaCore\obj\De
 C:\Users\Monitoreo01\Desktop\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\refint\SistemaCore.dll
 C:\Users\Monitoreo01\Desktop\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.pdb
 C:\Users\Monitoreo01\Desktop\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\ref\SistemaCore.dll
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.csproj.AssemblyReference.cache
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.AssemblyInfoInputs.cache
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.AssemblyInfo.cs
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.csproj.CoreCompileInputs.cache
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\bin\Debug\net5.0\ArchivosSerializacion\baraja_Datos.json
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\bin\Debug\net5.0\ArchivosSerializacion\config.json
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\bin\Debug\net5.0\SistemaCore.deps.json
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\bin\Debug\net5.0\SistemaCore.dll
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\bin\Debug\net5.0\SistemaCore.pdb
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.dll
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\refint\SistemaCore.dll
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\SistemaCore.pdb
+C:\Users\jerel\source\repos\parziale.jeremias.segundoparcial\SistemaCore\obj\Debug\net5.0\ref\SistemaCore.dll

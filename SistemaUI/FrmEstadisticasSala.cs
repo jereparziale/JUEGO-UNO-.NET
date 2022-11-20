@@ -22,18 +22,13 @@ namespace SistemaUI
 
         private void FrmEstadisticasSala_Load(object sender, EventArgs e)
         {
+            lblTitulo.Text += $"{salaSeleccionada.Descripcion}";
             lblHistorial.Text = $"Historial {salaSeleccionada.Jugador1.NombreUsuario} vs. {salaSeleccionada.Jugador2.NombreUsuario}";
-            int cantJ1;
-            int cantJ2;
-            int ganadasSinCartas;
-            salaSeleccionada.PartidasGanadasPorSala(out cantJ1, out cantJ2,out ganadasSinCartas);
+            salaSeleccionada.PartidasGanadasPorSala(out int cantJ1, out int cantJ2,out int ganadasSinCartas);
             lblVictoriasJ1.Text = $"J1 Victorias: {cantJ1}";
             lblVictoriasJ2.Text = $"J2 Victorias: {cantJ2}";
             lblGanadasSinCartas.Text += $" {ganadasSinCartas}";
-            int cantidasMas4;
-            int cantidasMas2;
-            int cantidasBloqueoReversa;
-            salaSeleccionada.EstadisticasPorCartaPorSala(out cantidasMas4,out cantidasMas2, out cantidasBloqueoReversa);
+            salaSeleccionada.EstadisticasPorCartaPorSala(out int cantidasMas4,out int cantidasMas2, out int cantidasBloqueoReversa);
             lblCantidadMasCuatro.Text += $" {cantidasMas4}";
             lblCantidadMasDos.Text += $" {cantidasMas2}";
             lblBloqueoReversa.Text += $" {cantidasBloqueoReversa}";

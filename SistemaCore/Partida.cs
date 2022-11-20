@@ -18,13 +18,14 @@ namespace SistemaCore
         EEstadosPartidas estadoPartida;
         StringBuilder sbMensajeJuego;
         StringBuilder sbMensajeCartasEnMesa;
-        Action<string, string> delegadoUI;
+        public delegate void EventoUI(string x,ICarta b);
+        public event EventoUI EventoModificarUI;
         int cantidadMasCuatroUsados;
         int cantidadMasDosUsados;
         int cantidadBloqueoReversa;
 
 
-        public Partida(Jugador jugador1, Jugador jugador2, Action<string, string> delegadoUI)
+        public Partida(Jugador jugador1, Jugador jugador2)
         {
             this.sbMensajeJuego = new StringBuilder();
             this.sbMensajeCartasEnMesa = new StringBuilder();
@@ -38,15 +39,12 @@ namespace SistemaCore
             pozoDeDescarte.Push(baraja.DarCarta());
             this.manosJugadas = 0;
             this.estadoPartida = EEstadosPartidas.Jugando;
-            this.delegadoUI = delegadoUI;
             this.cantidadMasCuatroUsados = 0;
             this.cantidadMasDosUsados = 0;
             this.cantidadBloqueoReversa = 0;
         }
 
         public ICarta CartaEnMesa { get => pozoDeDescarte.Peek();}
-
-      
 
         public string CantarUno
         {
@@ -68,12 +66,13 @@ namespace SistemaCore
         public Jugador Jugador1 { get => jugador1; set => jugador1 = value; }
         public Jugador Jugador2 { get => jugador2; set => jugador2 = value; }
         public StringBuilder SbMensajeJuego { get => sbMensajeJuego; set => sbMensajeJuego = value; }
-        internal EEstadosPartidas EstadoPartida { get => estadoPartida; set => estadoPartida = value; }
+        public EEstadosPartidas EstadoPartida { get => estadoPartida; set => estadoPartida = value; }
         public StringBuilder SbMensajeCartasEnMesa { get => sbMensajeCartasEnMesa; set => sbMensajeCartasEnMesa = value; }
         public int CantidadMasCuatroUsados { get => cantidadMasCuatroUsados;  }
         public int CantidadMasDosUsados { get => cantidadMasDosUsados;  }
         public int CantidadBloqueoReversa { get => cantidadBloqueoReversa;}
         public int ManosJugadas { get => manosJugadas;}
+        public Baraja Baraja { get => baraja; set => baraja = value; }
 
         public string InicioDelJuego()
         {
@@ -83,7 +82,7 @@ namespace SistemaCore
             {
                 pozoDeDescarte.Push(baraja.DarCarta());
             } while (!pozoDeDescarte.Peek().PuedeSerPrimerCarta);
-            return sbMensajeJuego.AppendLine($"La carta en mesa es {CartaEnMesa.ToString()}").ToString();
+            return sbMensajeJuego.AppendLine($"La carta en mesa es {CartaEnMesa}").ToString();
         }
 
         public string DeclararGanador()
@@ -101,11 +100,11 @@ namespace SistemaCore
                 }
                 else
                 {
-                return "El juego finalizo en empate";
+                    return "El juego finalizo en empate";
                 }
         }
 
-        public void Desarrollo()
+        public void JugarMano()
         {
             int casoDeJuego = -1;
             int cantidadVecesTomarCarta = 0;
@@ -114,7 +113,13 @@ namespace SistemaCore
             Jugador jugadorContrario;
             bool juegaOtraVez = false;
             sbMensajeCartasEnMesa.Append($"{CartaEnMesa}{Environment.NewLine}");
-            
+            if (EventoModificarUI is not null)
+            {
+                EventoModificarUI(sbMensajeJuego.ToString(), CartaEnMesa);
+                Task.Delay(500).Wait();
+            }
+
+
             if (manosJugadas%2==0)
             {
                 jugadorMano = jugador1;
@@ -129,8 +134,9 @@ namespace SistemaCore
             //VA POR TURNOS
             do
             {
+                Task.Delay(500).Wait();
                 juegaOtraVez = false;
-                EvaluarSiJugar(jugadorMano, out casoDeJuego, out cartaAJugar);
+                EvaluarCasoAJugar(jugadorMano, out casoDeJuego, out cartaAJugar);
                 sbMensajeJuego.Append(Jugar(casoDeJuego, jugadorMano, jugadorContrario, cartaAJugar,out juegaOtraVez));
                 
                 //ROMPO BUCLE PARA QUE SOLO LEVANTE UNA CARTA Y PASE TURNO AL NO PODER JGUAR
@@ -150,10 +156,10 @@ namespace SistemaCore
 
                 if (CantarUno != String.Empty)
                     sbMensajeJuego.Append(CantarUno);
+                //EVENTO 
+                if(EventoModificarUI is not null)
+                    EventoModificarUI(sbMensajeJuego.ToString(),CartaEnMesa);
 
-                delegadoUI(sbMensajeJuego.ToString(), sbMensajeCartasEnMesa.ToString());
-
-                //AGREGAR DELEGADOD PARA ESCRIBIR EN EL FORM,
             } while (juegaOtraVez);
             manosJugadas++;
         }
@@ -162,7 +168,7 @@ namespace SistemaCore
 
 
 
-        private void EvaluarSiJugar(Jugador jugador,out int caso,out ICarta cartaAJugar)
+        private void EvaluarCasoAJugar(Jugador jugador,out int caso,out ICarta cartaAJugar)
         {
             cartaAJugar=null;
             caso = -1;
@@ -312,27 +318,34 @@ namespace SistemaCore
         }
 
 
-        private string TomarCarta(Jugador jugadorMano)
+        public string TomarCarta(Jugador jugadorMano)
         {
-            StringBuilder sbMensaje = new StringBuilder();
-            jugadorMano.TomarCarta = baraja.DarCarta();
-            sbMensaje.AppendLine($"{jugadorMano.NombreUsuario} toma {jugadorMano.ManoCartasJugador.Last()}");
-            return sbMensaje.ToString();
+            if (jugadorMano is not null)
+            {
+                StringBuilder sbMensaje = new StringBuilder();
+                jugadorMano.TomarCarta = baraja.DarCarta();
+                sbMensaje.AppendLine($"{jugadorMano.NombreUsuario} toma {jugadorMano.ManoCartasJugador.Last()}");
+                return sbMensaje.ToString();
+            }
+            else
+                throw new ArgumentNullException("Error en modulo partida, param. jugadorMano es nulo");
+
+           
         }
 
-
-
-
-
-
-
-
-        private StringBuilder JugarCarta(Jugador jugador, ICarta item)
+        public StringBuilder JugarCarta(Jugador jugador, ICarta item)
         {
-            jugador.ManoCartasJugador.Remove(item);
-            pozoDeDescarte.Push(item);
-            StringBuilder sbMensaje = new StringBuilder();
-            return sbMensaje.AppendLine($"{jugador.NombreUsuario} juega {pozoDeDescarte.Peek()}");
+            if (jugador is not null && item is not null)
+            {
+                jugador.ManoCartasJugador.Remove(item);
+                pozoDeDescarte.Push(item);
+                StringBuilder sbMensaje = new StringBuilder();
+                return sbMensaje.AppendLine($"{jugador.NombreUsuario} juega {pozoDeDescarte.Peek()}");
+            }
+            else
+                throw new ArgumentNullException("Error en modulo partida, param. jugar carta nulo");
+
+            
         }
 
 

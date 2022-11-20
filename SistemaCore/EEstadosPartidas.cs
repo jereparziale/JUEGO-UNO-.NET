@@ -1,6 +1,6 @@
 ﻿namespace SistemaCore
 {
-    enum EEstadosPartidas
+    public enum EEstadosPartidas
     {
         Jugando,Pausado,Finalizado,Cancelado
     }

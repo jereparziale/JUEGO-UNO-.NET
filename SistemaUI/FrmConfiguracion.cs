@@ -17,26 +17,17 @@ namespace SistemaUI
         {
             InitializeComponent();
             nupCantidadManos.Minimum = 5;
+            nupCantidadManos.Value = Sistema.Configuracion.CantidadDeManos;
         }
 
         private void FrmConfiguracion_Load(object sender, EventArgs e)
         {
-            if(Sistema.Configuracion.DeclararPorPuntos)
-            {
                 rdbPuntos.Checked = true;
-                rdbCantidadCartas.Checked = false;
-            }else
-            {
-                rdbPuntos.Checked = false;
-                rdbCantidadCartas.Checked = true;
-            }
-            nupCantidadManos.Value = Sistema.Configuracion.CantidadDeManos;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Sistema.Configuracion.CantidadDeManos = Convert.ToInt32(nupCantidadManos.Value);
-            Sistema.Configuracion.DeclararPorPuntos = rdbPuntos.Checked;
             this.DialogResult = DialogResult.OK;
         }
 

@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace SistemaCore
 {
     public class Baraja
     {
+        [JsonIgnore]
         public List<ICarta> barajaUno;
+        [JsonIgnore]
         public Stack<ICarta> barajaUnoMezclada;
         List<CartaNumerica> listaCartasNumericas;
         List<CartaAccion> listaCartasAccion;
@@ -23,7 +27,13 @@ namespace SistemaCore
             listaCartasComodin = new List<CartaComodin>();
             barajaUno = new List<ICarta>();
             barajaUnoMezclada = new Stack<ICarta>();
-            
+        }
+
+        public Baraja(bool leerJson)
+        {
+            listaCartasAccion = new List<CartaAccion>();
+            listaCartasNumericas = new List<CartaNumerica>();
+            listaCartasComodin = new List<CartaComodin>();
         }
 
         
@@ -31,7 +41,9 @@ namespace SistemaCore
         public List<CartaNumerica> ListaCartasNumericas { get => listaCartasNumericas; set => listaCartasNumericas = value; }
         public List<CartaAccion> ListaCartasAccion { get => listaCartasAccion; set => listaCartasAccion = value; }
         public List<CartaComodin> ListaCartasComodin { get => listaCartasComodin; set => listaCartasComodin = value; }
-        private int CantidadCartasRestantes { get => barajaUnoMezclada.Count;}
+
+        [JsonIgnore]
+        public int CantidadCartasRestantes { get => barajaUnoMezclada.Count;}
 
         public ICarta DarCarta()
         {
@@ -45,20 +57,33 @@ namespace SistemaCore
 
         public List<ICarta> RepartirCartasAJugador(int cantidad)
         {
-            List<ICarta> manoCartasJugador = new List<ICarta>();
-            for (int i = 0; i < cantidad; i++)
+            if (cantidad > 0)
             {
-                manoCartasJugador.Add(this.barajaUnoMezclada.Pop());
+                List<ICarta> manoCartasJugador = new List<ICarta>();
+                for (int i = 0; i < cantidad; i++)
+                {
+                    manoCartasJugador.Add(this.barajaUnoMezclada.Pop());
+                }
+                return manoCartasJugador;
             }
-            return manoCartasJugador;
+            else
+                throw new Exception("Error en modulo 'baraja', cantidad no valida");
+
+
+            
         }
 
         public Stack<ICarta> CopiarMezclarBaraja(List<ICarta> baraja)
         {
-            Random rnd = new Random();
-            List<ICarta> barajaMezclada = baraja.OrderBy(item => rnd.Next()).ToList();
-            Stack<ICarta> stackAux = new Stack<ICarta>(barajaMezclada);
-            return stackAux;
+            if (baraja is not null)
+            {
+                Random rnd = new Random();
+                List<ICarta> barajaMezclada = baraja.OrderBy(item => rnd.Next()).ToList();
+                Stack<ICarta> stackAux = new Stack<ICarta>(barajaMezclada);
+                return stackAux;
+            }
+            else
+                throw new ArgumentNullException("Error en modulo 'baraja'");
         }
 
 
@@ -83,122 +108,110 @@ namespace SistemaCore
         private void CrearCartas()
         {
             #region CARTAS AZULES
-            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Azul));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Azul));
-            listaCartasAccion.Add(new CartaAccion(EColores.Azul, true, false, false, false));
-            listaCartasAccion.Add(new CartaAccion(EColores.Azul, false, true, false, false));
-            listaCartasAccion.Add(new CartaAccion(EColores.Azul, false, false, true, false));
-            listaCartasAccion.Add(new CartaAccion(EColores.Azul, false, false, true, false));
+            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Azul, "../../../assets/0azul.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Azul, true, false, false, false, "../../../assets/reversaAzul.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Azul, false, true, false, false, "../../../assets/bloqueoAzul.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Azul, false, false, true, false, "../../../assets/masDosAzul.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Azul, false, false, true, false, "../../../assets/masDosAzul.png"));
             #endregion
             #region CARTAS ROJAS
-            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Rojo));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Rojo));
-            CartaAccion cartaReversarojo = new CartaAccion(EColores.Rojo, true, false, false, false);
-            CartaAccion cartaSaltaTurnorojo = new CartaAccion(EColores.Rojo, false, true, false, false);
-            CartaAccion cartaMasDosRojo0 = new CartaAccion(EColores.Rojo, false, false, true, false);
-            CartaAccion cartaMasDosRojo1 = new CartaAccion(EColores.Rojo, false, false, true, false);
-            listaCartasAccion.Add(cartaReversarojo);
-            listaCartasAccion.Add(cartaSaltaTurnorojo);
-            listaCartasAccion.Add(cartaMasDosRojo0);
-            listaCartasAccion.Add(cartaMasDosRojo1);
+            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Rojo, "../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Rojo,"../../../assets/0rojo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Rojo, "../../../assets/0rojo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Rojo, true, false, false, false, "../../../assets/reversaRojo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Rojo, false, true, false, false, "../../../assets/bloqueoRojo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Rojo, false, false, true, false, "../../../assets/masDosRojo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Rojo, false, false, true, false, "../../../assets/masDosRojo.png"));
             #endregion
             #region CARTAS AMARILLAS
-            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Amarillo));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Amarillo));
-            CartaAccion cartaReversaAmarillo = new CartaAccion(EColores.Amarillo, true, false, false, false);
-            CartaAccion cartaSaltaTurnoAmarillo = new CartaAccion(EColores.Amarillo, false, true, false, false);
-            CartaAccion cartaMasDosAmarillo0 = new CartaAccion(EColores.Amarillo, false, false, true, false);
-            CartaAccion cartaMasDosAmarillo1 = new CartaAccion(EColores.Amarillo, false, false, true, false);
-            listaCartasAccion.Add(cartaReversaAmarillo);
-            listaCartasAccion.Add(cartaSaltaTurnoAmarillo);
-            listaCartasAccion.Add(cartaMasDosAmarillo0);
-            listaCartasAccion.Add(cartaMasDosAmarillo1);
+            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Amarillo, "../../../assets/0amarillo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Amarillo, true, false, false, false, "../../../assets/reversaAmarillo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Amarillo, false, true, false, false, "../../../assets/bloqueoAmarillo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Amarillo, false, false, true, false, "../../../assets/masDosAmarillo.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Amarillo, false, false, true, false, "../../../assets/masDosAmarillo.png"));
             #endregion
             #region CARTAS VERDES
-            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Verde));
-            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Verde));
-            CartaAccion cartaReversaVerde = new CartaAccion(EColores.Verde, true, false, false, false);
-            CartaAccion cartaSaltaTurnoVerde = new CartaAccion(EColores.Verde, false, true, false, false);
-            CartaAccion cartaMasDosVerde0 = new CartaAccion(EColores.Verde, false, false, true, false);
-            CartaAccion cartaMasDosVerde1 = new CartaAccion(EColores.Verde, false, false, true, false);
-            listaCartasAccion.Add(cartaReversaVerde);
-            listaCartasAccion.Add(cartaSaltaTurnoVerde);
-            listaCartasAccion.Add(cartaMasDosVerde0);
-            listaCartasAccion.Add(cartaMasDosVerde1);
+            listaCartasNumericas.Add(new CartaNumerica(0, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(1, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(2, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(3, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(4, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(5, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(6, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(7, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(8, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasNumericas.Add(new CartaNumerica(9, EColores.Verde, "../../../assets/0verde.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Verde, true, false, false, false, "../../../assets/reversaVerde.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Verde, false, true, false, false, "../../../assets/bloqueoVerde.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Verde, false, false, true, false, "../../../assets/masDosVerde.png"));
+            listaCartasAccion.Add(new CartaAccion(EColores.Verde, false, false, true, false, "../../../assets/masDosVerde.png"));
             #endregion
             #region CARTAS NEGRAS
-            CartaAccion masCuatro0 = new CartaAccion(EColores.Negro, false, false, false, true);
-            CartaAccion masCuatro1 = new CartaAccion(EColores.Negro, false, false, false, true);
-            CartaAccion masCuatro2 = new CartaAccion(EColores.Negro, false, false, false, true);
-            CartaAccion masCuatro3 = new CartaAccion(EColores.Negro, false, false, false, true);
+            CartaAccion masCuatro0 = new CartaAccion(EColores.Negro, false, false, false, true, "../../../assets/masCuatro.png");
+            CartaAccion masCuatro1 = new CartaAccion(EColores.Negro, false, false, false, true, "../../../assets/masCuatro.png");
+            CartaAccion masCuatro2 = new CartaAccion(EColores.Negro, false, false, false, true, "../../../assets/masCuatro.png");
+            CartaAccion masCuatro3 = new CartaAccion(EColores.Negro, false, false, false, true, "../../../assets/masCuatro.png");
             listaCartasAccion.Add(masCuatro0);
             listaCartasAccion.Add(masCuatro1);
             listaCartasAccion.Add(masCuatro2);

@@ -11,6 +11,13 @@ namespace SistemaCore
         public bool PuedeSerPrimerCarta
         {
             get;
+            
+        }
+
+        public string PathImagenCarta
+        {
+            get;
+            set;
         }
     }
 }

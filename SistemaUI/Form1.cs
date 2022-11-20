@@ -12,13 +12,12 @@ using System.Threading;
 using FrmMenuPrincipal;
 using AccesoADatos;
 using static SistemaUI.Form1;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace SistemaUI
 {
     public partial class Form1 : Form
     {
-        //Action ModificarUIPartida(string mensajeJugadores,string mensajeBaraja);
-        //ModificarUIPartida modificarUIPartida;
 
 
         public Form1()
@@ -27,7 +26,8 @@ namespace SistemaUI
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //modificarUIPartida = new ModificarUIPartida(ModificarMensajesPartidaTask);
+            panelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            
         }
 
       
@@ -39,9 +39,8 @@ namespace SistemaUI
             {
                 try
                 {
-                    txtJugador1.Clear();
-                    txtBaraja.Clear();
-                    Task.Run(() => ((SalaDeJuego)aux).Jugar(ModificarMensajesPartidaTask, FinalizarPartida,((SalaDeJuego)aux).CancelToken.Token));
+                    SalaDeJuego salaSeleccionada = (SalaDeJuego)aux;
+                    JugarNuevaPartida(salaSeleccionada);
                 }
                 catch (Exception ex)
                 {
@@ -54,6 +53,7 @@ namespace SistemaUI
             }
         }
 
+        
 
         private void btnListadoJugadores_Click(object sender, EventArgs e)
         {
@@ -81,15 +81,29 @@ namespace SistemaUI
             Object aux = lstSalas.SelectedItem;
             if (aux is not null)
             {
-                lblNombreSala.Text = ((SalaDeJuego)aux).ToString();
-                txtJugador1.Clear();
-                txtBaraja.Clear();
+                SalaDeJuego sala = ((SalaDeJuego)aux);
+                DesuscribirEventos();
+                lblNombreSala.Text = sala.ToString();
+                txtJugadas.Clear();
+                PbCartasEnMesa.Image = null; 
                 if(((SalaDeJuego)aux).ListadoDePartidas.Count>0)
                 {
-                    txtJugador1.AppendText(((SalaDeJuego)aux).PartidaEnJuego.SbMensajeJuego.ToString());
-                    txtBaraja.AppendText(((SalaDeJuego)aux).PartidaEnJuego.SbMensajeCartasEnMesa.ToString());
+                    sala.PartidaEnJuego.EventoModificarUI += ModificarMensajesPartida;
+                    //sala.EMostrarPartidaFinalizada += MostrarEstadisticasPartidaFinalizada;
+                    sala.ECancelarFinalizarPartida += ModificarMensajesPartida;
+                    txtJugadas.AppendText(sala.PartidaEnJuego.SbMensajeJuego.ToString());
                 }
-                lblNombreSala.Text = ((SalaDeJuego)aux).ToString();
+            }
+        }
+
+        private void DesuscribirEventos()
+        {
+            foreach (SalaDeJuego item in Sistema.ListadoSalas)
+            {
+                item.ECancelarFinalizarPartida -= ModificarMensajesPartida;
+
+                if (item.ListadoDePartidas.Count>0)
+                item.PartidaEnJuego.EventoModificarUI -= ModificarMensajesPartida;
             }
         }
 
@@ -104,13 +118,22 @@ namespace SistemaUI
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            FrmEstadisticasSala frmEstadisticasSala = new FrmEstadisticasSala((SalaDeJuego)lstSalas.SelectedItem);
-            frmEstadisticasSala.ShowDialog();
+            Object aux = lstSalas.SelectedItem;
+            if (aux is not null)
+            {
+                FrmEstadisticasSala frmEstadisticasSala = new FrmEstadisticasSala((SalaDeJuego)aux);
+                frmEstadisticasSala.ShowDialog();
+            }
+            else
+                MostrarVentanaError("No existen salas activas", "Error");
+            
+            
         }
 
         private void btnEstatisticasGlobales_Click(object sender, EventArgs e)
         {
-            //SQL
+            FrmEstadisticasGlobales frmEstadisticasGlobales = new FrmEstadisticasGlobales();
+            frmEstadisticasGlobales.ShowDialog();
         }
         
 
@@ -127,7 +150,7 @@ namespace SistemaUI
 
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
-            Sistema.GuardarPartidasArchivoSql();
+            Sistema.GuardarPartidasEnArchivo();
             Application.Exit();
         }
         //FIN EVENTOS DEL FORM//////////////////////////////////////////////////////////////////////////////////////////
@@ -136,9 +159,7 @@ namespace SistemaUI
         {
             try
             {
-                txtJugador1.Clear();
-                txtBaraja.Clear();
-                aux.Jugar(ModificarMensajesPartidaTask, FinalizarPartida, aux.CancelToken.Token);
+                JugarNuevaPartida(aux);
             }
             catch (Exception ex)
             {
@@ -146,59 +167,60 @@ namespace SistemaUI
             }
         }
 
-        public void ModificarMensajesPartida(string mensajeJuego, string mensajeBaraja)
-        {
-            txtJugador1.Clear();
-            txtBaraja.Clear();
-            txtJugador1.AppendText(mensajeJuego);
-            txtBaraja.AppendText(mensajeBaraja);
-        }
 
-        private void ModificarMensajesPartidaTask(string mensajeJuego, string mensajeBaraja)
-        {
-            if (this.txtJugador1.InvokeRequired && this.txtBaraja.InvokeRequired)
+        private void ModificarMensajesPartida(string mensajeJuego,ICarta carta)
+         {
+            if (this.txtJugadas.InvokeRequired&& this.PbCartasEnMesa.InvokeRequired)
             {
-                this.txtJugador1.BeginInvoke((MethodInvoker)delegate ()
+                this.txtJugadas.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    txtJugador1.Clear();
-                    txtJugador1.AppendText(mensajeJuego);
+                    txtJugadas.Clear();
+                    txtJugadas.AppendText(mensajeJuego);
                 });
-                this.txtBaraja.BeginInvoke((MethodInvoker)delegate ()
+                this.PbCartasEnMesa.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    txtBaraja.Clear();
-                    txtBaraja.AppendText(mensajeBaraja);
+                    if(carta is not null)
+                        PbCartasEnMesa.Image = Image.FromFile(carta.PathImagenCarta);
+                    else
+                        PbCartasEnMesa.Image = Image.FromFile("../../../assets/logo_uno.ico");
                 });
             }
             else
             {
-                txtJugador1.Clear();
-                txtBaraja.Clear();
-                txtJugador1.AppendText(mensajeJuego);
-                txtBaraja.AppendText(mensajeBaraja);
+                txtJugadas.Clear();
+                txtJugadas.AppendText(mensajeJuego);
+                PbCartasEnMesa.Image = Image.FromFile(carta.PathImagenCarta);
             }
-        }
-
-        private void FinalizarPartida(string mensajeJuego, Partida partida)
+        } 
+        private void MostrarEstadisticasPartidaFinalizada(SalaDeJuego sala)
         {
-            if (this.txtJugador1.InvokeRequired)
+
+            if (this.lstSalas.InvokeRequired)
             {
-                this.txtJugador1.BeginInvoke((MethodInvoker)delegate ()
+                this.lstSalas.BeginInvoke((MethodInvoker)delegate ()
                 {
-                    txtJugador1.AppendText(mensajeJuego);
-                    FrmFinPartida frmFinPartida = new FrmFinPartida(partida, (SalaDeJuego)lstSalas.SelectedItem);
+                    Object aux = lstSalas.SelectedItem;
+                    if (aux is not null)
+                    {
+                        FrmFinPartida frmFinPartida = new FrmFinPartida(sala, (SalaDeJuego)aux);
+                        DialogResult dialogResult = frmFinPartida.ShowDialog();
+                        if (dialogResult == DialogResult.OK)
+                            VolverAJugar(sala);
+                    }
+                });
+            }
+            else
+            {
+                Object aux = lstSalas.SelectedItem;
+                if (aux is not null)
+                {
+                    FrmFinPartida frmFinPartida = new FrmFinPartida(sala, (SalaDeJuego)aux);
                     DialogResult dialogResult = frmFinPartida.ShowDialog();
                     if (dialogResult == DialogResult.OK)
-                        VolverAJugar((SalaDeJuego)lstSalas.SelectedItem);
-                });
+                        VolverAJugar(sala);
+                }
             }
-            else
-            {
-                txtJugador1.AppendText(mensajeJuego);
-                FrmFinPartida frmFinPartida = new FrmFinPartida(partida, (SalaDeJuego)lstSalas.SelectedItem);
-                DialogResult dialogResult = frmFinPartida.ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                    VolverAJugar((SalaDeJuego)lstSalas.SelectedItem);
-            }
+            
         }
 
 
@@ -207,6 +229,22 @@ namespace SistemaUI
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        
+        private void JugarNuevaPartida(SalaDeJuego salaSeleccionada)
+        {
+            DesuscribirEventos();
+            txtJugadas.Clear();
+            PbCartasEnMesa.Image = null;
+            Sistema.JugarPartida(salaSeleccionada, MostrarVentanaError);
+            //SUSCRIBIR EVENTOS
+            if (salaSeleccionada.ListadoDePartidas.Count > 0)
+                salaSeleccionada.PartidaEnJuego.EventoModificarUI += ModificarMensajesPartida;
+
+            if(salaSeleccionada.suscribirEventoMostrarEstadistica())
+                salaSeleccionada.EMostrarPartidaFinalizada += MostrarEstadisticasPartidaFinalizada;
+
+            salaSeleccionada.ECancelarFinalizarPartida += ModificarMensajesPartida;
+        }
+
+
     }
 }

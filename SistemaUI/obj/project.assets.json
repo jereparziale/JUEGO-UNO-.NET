@@ -494,11 +494,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jerel\\source\\repos\\ejerciciosclase-2d-segundaParte\\LaboSegundaParte\\parziale.jeremias.segundoparcial\\SistemaUI\\SistemaUI.csproj",
+      "projectUniqueName": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaUI\\SistemaUI.csproj",
       "projectName": "SistemaUI",
-      "projectPath": "C:\\Users\\jerel\\source\\repos\\ejerciciosclase-2d-segundaParte\\LaboSegundaParte\\parziale.jeremias.segundoparcial\\SistemaUI\\SistemaUI.csproj",
+      "projectPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaUI\\SistemaUI.csproj",
       "packagesPath": "C:\\Users\\jerel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jerel\\source\\repos\\ejerciciosclase-2d-segundaParte\\LaboSegundaParte\\parziale.jeremias.segundoparcial\\SistemaUI\\obj\\",
+      "outputPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jerel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -515,8 +515,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\jerel\\source\\repos\\ejerciciosclase-2d-segundaParte\\LaboSegundaParte\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj": {
-              "projectPath": "C:\\Users\\jerel\\source\\repos\\ejerciciosclase-2d-segundaParte\\LaboSegundaParte\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj"
+            "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj": {
+              "projectPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj"
             }
           }
         }

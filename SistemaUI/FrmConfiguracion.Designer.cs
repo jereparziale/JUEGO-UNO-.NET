@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbPuntos = new System.Windows.Forms.RadioButton();
-            this.rdbCantidadCartas = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.nupCantidadManos = new System.Windows.Forms.NumericUpDown();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -44,19 +43,22 @@
             // lblTitulo
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Font = new System.Drawing.Font("Malgun Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(215, 33);
+            this.lblTitulo.Size = new System.Drawing.Size(235, 33);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "CONFIGURACION";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(12, 214);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 23);
+            this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cantidad de manos a Jugar:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -64,11 +66,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdbPuntos);
-            this.groupBox1.Controls.Add(this.rdbCantidadCartas);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
             this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 160);
+            this.groupBox1.Size = new System.Drawing.Size(210, 155);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modo de Juego";
@@ -76,24 +79,13 @@
             // rdbPuntos
             // 
             this.rdbPuntos.AutoSize = true;
-            this.rdbPuntos.Location = new System.Drawing.Point(9, 124);
+            this.rdbPuntos.Location = new System.Drawing.Point(9, 87);
             this.rdbPuntos.Name = "rdbPuntos";
-            this.rdbPuntos.Size = new System.Drawing.Size(83, 19);
+            this.rdbPuntos.Size = new System.Drawing.Size(87, 19);
             this.rdbPuntos.TabIndex = 2;
             this.rdbPuntos.TabStop = true;
             this.rdbPuntos.Text = "Por Puntos";
             this.rdbPuntos.UseVisualStyleBackColor = true;
-            // 
-            // rdbCantidadCartas
-            // 
-            this.rdbCantidadCartas.AutoSize = true;
-            this.rdbCantidadCartas.Location = new System.Drawing.Point(9, 87);
-            this.rdbCantidadCartas.Name = "rdbCantidadCartas";
-            this.rdbCantidadCartas.Size = new System.Drawing.Size(180, 19);
-            this.rdbCantidadCartas.TabIndex = 1;
-            this.rdbCantidadCartas.TabStop = true;
-            this.rdbCantidadCartas.Text = "Por Menor cantidad de cartas";
-            this.rdbCantidadCartas.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -106,7 +98,7 @@
             // 
             // nupCantidadManos
             // 
-            this.nupCantidadManos.Location = new System.Drawing.Point(172, 216);
+            this.nupCantidadManos.Location = new System.Drawing.Point(194, 216);
             this.nupCantidadManos.Maximum = new decimal(new int[] {
             30,
             0,
@@ -118,9 +110,12 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(0, 260);
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnGuardar.Location = new System.Drawing.Point(1, 259);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(223, 36);
+            this.btnGuardar.Size = new System.Drawing.Size(234, 36);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar Cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -128,9 +123,12 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(0, 301);
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSalir.Location = new System.Drawing.Point(1, 301);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(223, 36);
+            this.btnSalir.Size = new System.Drawing.Size(234, 36);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir Sin Guardar";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -140,7 +138,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 335);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(89)))), ((int)(((byte)(156)))));
+            this.ClientSize = new System.Drawing.Size(235, 346);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardar);
@@ -152,6 +151,7 @@
             this.Name = "FrmConfiguracion";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConfiguracion";
             this.Load += new System.EventHandler(this.FrmConfiguracion_Load);
             this.groupBox1.ResumeLayout(false);
@@ -167,7 +167,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdbPuntos;
-        private System.Windows.Forms.RadioButton rdbCantidadCartas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nupCantidadManos;
         private System.Windows.Forms.Button btnGuardar;

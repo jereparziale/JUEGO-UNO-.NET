@@ -9,7 +9,6 @@ namespace SistemaCore
     public class Configuracion
     {
         int cantidadDeManos;
-        bool declararPorPuntos;
 
         public Configuracion()
         {
@@ -17,6 +16,5 @@ namespace SistemaCore
         }
 
         public int CantidadDeManos { get => cantidadDeManos; set => cantidadDeManos = value; }
-        public bool DeclararPorPuntos { get => declararPorPuntos; set => declararPorPuntos = value; }
     }
 }

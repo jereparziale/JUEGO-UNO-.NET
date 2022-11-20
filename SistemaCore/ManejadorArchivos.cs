@@ -27,7 +27,7 @@ namespace SistemaCore
                 }
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new Exception($"Error en el archivo {rutaCompleta}");
             }

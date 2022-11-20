@@ -25,9 +25,7 @@ namespace SistemaCore
         }
 
         public List<ICarta> ManoCartasJugador { get => manoCartasJugador; set => manoCartasJugador = value; }
-
-        public int CartasRestantes { get => manoCartasJugador.Count; }
-
+        public int CartasRestantes { get => manoCartasJugador.Count;}
         public ICarta TomarCarta { set => manoCartasJugador.Add(value); }
         public int IdJugador { get => idJugador; set => idJugador = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
@@ -49,7 +47,7 @@ namespace SistemaCore
                 default:
                     break;
             }
-            return EColores.Negro; //OJOOOO
+            return EColores.Negro; 
         }
     }
 }

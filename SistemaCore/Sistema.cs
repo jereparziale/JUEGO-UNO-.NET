@@ -24,6 +24,9 @@ namespace SistemaCore
             listadoSalas = new List<SalaDeJuego>();
             rdn = new Random();
             configuracion = Serializadora<Configuracion>.LeerJSON("config");
+            //baraja = new Baraja();
+            //baraja.CrearCartas();
+            //Serializadora<Baraja>.EscribirJSON(baraja,"baraja_Datos");
             baraja = Serializadora<Baraja>.LeerJSON("baraja_Datos");
             baraja.LlenarListaICarta();
         }
@@ -33,7 +36,7 @@ namespace SistemaCore
         public static List<Usuario> ListadoDeUsuarios { get => listadoDeUsuarios;}
         public static List<SalaDeJuego> ListadoSalas { get => listadoSalas; }
         public static Configuracion Configuracion { get => configuracion; set => configuracion = value; }
-        public static Baraja Baraja { get => baraja; }//HACER QUQE RETORNE LA BARAJA MEZCLADA
+        public static Baraja Baraja { get => baraja; }
 
         public static void AgregarSala()
         {
@@ -49,6 +52,18 @@ namespace SistemaCore
             {
                 throw;
             }
+        } 
+        public static void JugarPartida(SalaDeJuego sala,Action<string,string> mostrarExcepciones)
+        {
+            if (sala.ListadoDePartidas.Count > 0)
+                if (sala.PartidaEnJuego.EstadoPartida == EEstadosPartidas.Jugando)
+                {
+                    mostrarExcepciones("Aun se encuentra una partida en juego", "Error");
+                    return;
+                }
+
+            Task.Run(() => sala.Jugar(sala.CancelToken.Token));
+            Task.Delay(500).Wait();
         }
 
 
@@ -118,22 +133,51 @@ namespace SistemaCore
             return jugador;
         }
 
-        public static void GuardarPartidasArchivoSql()
+        public static void GuardarPartidasEnArchivo()
         {
             foreach (SalaDeJuego sala in listadoSalas)
             {
                 foreach (Partida item in sala.ListadoDePartidas)
                 {
-                    
                     if (item.EstadoPartida == EEstadosPartidas.Finalizado)
                     {
                         DateTime fecha = DateTime.Now;
-                        PartidasDAO.AgregarPartida(item);
-                        ManejadorArchivo.Escribir(item.SbMensajeJuego.ToString(), $"{fecha.ToString("dd-mm-yy")}-{item.Jugador1.NombreUsuario}-{item.Jugador2.NombreUsuario}");
+                        ManejadorArchivo.Escribir(item.SbMensajeJuego.ToString(), $"{fecha.ToString("d-MM-yyyy")}-{item.Jugador1.NombreUsuario}-{item.Jugador2.NombreUsuario}");
                     }
                 }
             }
-            
+        }
+
+
+        public static void ObtenerEstadisticaCantidadPartidas(Action<string> DelegadoUI)
+        {
+            string query = "SELECT COUNT(IdPartida) AS PARTIDAS  FROM Partidas";
+            string mensaje = "La cantidad de partidas registradas en sistema es de:";
+            PartidasDAO.ObtenerEstadisticasInt(DelegadoUI, query, mensaje);
+        } 
+        
+        public static void ObtenerEstadisticaCantidadEmpates(Action<string> DelegadoUI)
+        {
+            string query = "SELECT COUNT(idJugadorGanador) CantidadEmpates FROM Partidas\r\nWHERE idJugadorGanador=0";
+            string mensaje = "La cantidad de partidas finalizadas en empate es de:";
+            PartidasDAO.ObtenerEstadisticasInt(DelegadoUI, query, mensaje);
+        }
+        
+        public static void ObtenerEstadisticaCantidadSinCartas(Action<string> DelegadoUI)
+        {
+            string query = "SELECT COUNT(idJugadorGanador) CantidadSinCartas FROM Partidas\r\nWHERE IdJugadorGanador=IdJugador1 AND CartasRestantesJ1=0\r\nOR IdJugadorGanador=IdJugador2 AND CartasRestantesJ2=0";
+            string mensaje = "La cantidad de partidas con ganador sin cartas es de:";
+            PartidasDAO.ObtenerEstadisticasInt(DelegadoUI, query, mensaje);
+        }
+        
+        public static void ObtenerEstadisticaHistorialJugadores(Action<string> DelegadoUI,int jugador1,int jugador2)
+        {
+            PartidasDAO.ObtenerEstadisticasHistorialJugadores(jugador1, jugador2, out int ganadasj1);
+            PartidasDAO.ObtenerEstadisticasHistorialJugadores(jugador2, jugador1, out int ganadasj2);
+            if(ganadasj1!=0 && ganadasj2 !=0)
+                DelegadoUI($"El historial es de {ganadasj1} a {ganadasj2}");
+            else
+                DelegadoUI($"No hay enfrentamientos registrados");
         }
     }
 }

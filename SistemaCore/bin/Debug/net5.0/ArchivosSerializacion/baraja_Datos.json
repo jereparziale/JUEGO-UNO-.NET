@@ -1,0 +1,684 @@
+{
+  "ListaCartasNumericas": [
+    {
+      "PathImagenCarta": "../../../assets/0azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 0,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9azul.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "azul"
+    },
+    {
+      "PathImagenCarta": "../../../assets/0rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 0,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9rojo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "rojo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/0amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 0,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9amarillo.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "amarillo"
+    },
+    {
+      "PathImagenCarta": "../../../assets/0verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 0,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/1verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 1,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/2verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 2,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/3verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 3,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/4verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 4,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/5verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 5,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/6verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 6,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/7verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 7,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/8verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 8,
+      "ColorCarta": "verde"
+    },
+    {
+      "PathImagenCarta": "../../../assets/9verde.png",
+      "PuedeSerPrimerCarta": true,
+      "NumeroValor": 9,
+      "ColorCarta": "verde"
+    }
+  ],
+  "ListaCartasAccion": [
+    {
+      "PathImagenCarta": "../../../assets/reversaAzul.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "azul",
+      "EsReversa": true,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/bloqueoAzul.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "azul",
+      "EsReversa": false,
+      "EsSaltaTurno": true,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosAzul.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "azul",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosAzul.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "azul",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/reversaRojo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "rojo",
+      "EsReversa": true,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/bloqueoRojo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "rojo",
+      "EsReversa": false,
+      "EsSaltaTurno": true,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosRojo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "rojo",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosRojo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "rojo",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/reversaAmarillo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "amarillo",
+      "EsReversa": true,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/bloqueoAmarillo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "amarillo",
+      "EsReversa": false,
+      "EsSaltaTurno": true,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosAmarillo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "amarillo",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosAmarillo.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "amarillo",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/reversaVerde.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "verde",
+      "EsReversa": true,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/bloqueoVerde.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "verde",
+      "EsReversa": false,
+      "EsSaltaTurno": true,
+      "EsMasDos": false,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosVerde.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "verde",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masDosVerde.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "verde",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": true,
+      "EsMasCuatro": false,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masCuatro.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "negro",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": true,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masCuatro.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "negro",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": true,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masCuatro.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "negro",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": true,
+      "CartasALevantar": 0
+    },
+    {
+      "PathImagenCarta": "../../../assets/masCuatro.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorCarta": "negro",
+      "EsReversa": false,
+      "EsSaltaTurno": false,
+      "EsMasDos": false,
+      "EsMasCuatro": true,
+      "CartasALevantar": 0
+    }
+  ],
+  "ListaCartasComodin": [
+    {
+      "PathImagenCarta": "../../../assets/comodin.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorElegido": "negro"
+    },
+    {
+      "PathImagenCarta": "../../../assets/comodin.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorElegido": "negro"
+    },
+    {
+      "PathImagenCarta": "../../../assets/comodin.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorElegido": "negro"
+    },
+    {
+      "PathImagenCarta": "../../../assets/comodin.png",
+      "PuedeSerPrimerCarta": false,
+      "ColorElegido": "negro"
+    }
+  ]
+}

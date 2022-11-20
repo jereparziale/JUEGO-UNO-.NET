@@ -16,13 +16,13 @@ namespace SistemaCore
         static string ruta;
         static Serializadora()
         {
-            ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//Conseguir la ruta desde cualquier PC
-            ruta += @"/Archivos-Serializacion"; //Crea una carpeta
+            ruta = AppDomain.CurrentDomain.BaseDirectory;//Conseguir la ruta desde cualquier PC
+            ruta += @"ArchivosSerializacion"; //Crea una carpeta
         }
 
         public static void EscribirJSON(T datos, string archivo)
         {
-            string completa = ruta + @"/" + archivo + ".json";
+            string completa = ruta + @"\\" + archivo + ".json";
 
             if (!Directory.Exists(ruta))//Esto significa que la carpeta NO EXISTE
             {

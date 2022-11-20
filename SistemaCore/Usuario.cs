@@ -29,5 +29,10 @@ namespace SistemaCore
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
         public bool EstaJugando { get => estaJugando; set => estaJugando = value; }
         public int IdJugador { get => idJugador; set => idJugador = value; }
+
+        public override string ToString()
+        {
+            return NombreUsuario;
+        }
     }
 }

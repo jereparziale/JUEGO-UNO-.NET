@@ -11,18 +11,32 @@ namespace SistemaCore
     {
         int numeroValor;
         EColores colorCarta;
+        string pathImagenCarta;
 
         public CartaNumerica()
         {
             this.numeroValor = NumeroValor;
             this.colorCarta = ColorCarta;
+            this.pathImagenCarta = PathImagenCarta;
         }
-        public CartaNumerica(int numeroValor, EColores colorCarta)
+        public CartaNumerica(int numeroValor, EColores colorCarta,string pathImagenCarta)
         {
             this.numeroValor = numeroValor;
             this.colorCarta = colorCarta;
+            this.pathImagenCarta = pathImagenCarta;
         }
 
+        public string PathImagenCarta
+        {
+            get
+            {
+                return pathImagenCarta;
+            }
+            set
+            {
+                pathImagenCarta = value;
+            }
+        }
 
         public bool PuedeSerPrimerCarta
         {
