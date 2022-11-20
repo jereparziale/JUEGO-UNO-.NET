@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E34R6sHhuFkodQ8EYp2Ao/A1nziFj2bf4QV33lXrNJaYvwAkIfaSZ5ZKFelzlP+p2INkLSnfo2+prd0kb80hOQ==",
+  "dgSpecHash": "9A8xlTnpbbjJCsvOOce8e6RC6adoztMbpdfnGKQYV5vbvOaxnMnSn20Fv8olo/GDSyc96o9LALBFxZftjYmI5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\Uno.Test\\Uno.Test.csproj",
+  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\Uno.Test\\Uno.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jerel\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\jerel\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

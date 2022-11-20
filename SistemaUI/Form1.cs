@@ -31,7 +31,6 @@ namespace SistemaUI
         }
 
       
-
         private void btnJugar_Click(object sender, EventArgs e)
         {
             Object aux = lstSalas.SelectedItem;

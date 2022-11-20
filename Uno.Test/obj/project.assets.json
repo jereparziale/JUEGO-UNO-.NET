@@ -6794,11 +6794,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\Uno.Test\\Uno.Test.csproj",
+      "projectUniqueName": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\Uno.Test\\Uno.Test.csproj",
       "projectName": "Uno.Test",
-      "projectPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\Uno.Test\\Uno.Test.csproj",
+      "projectPath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\Uno.Test\\Uno.Test.csproj",
       "packagesPath": "C:\\Users\\jerel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\Uno.Test\\obj\\",
+      "outputPath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\Uno.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jerel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6815,8 +6815,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj": {
-              "projectPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj"
+            "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaCore\\SistemaCore.csproj": {
+              "projectPath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaCore\\SistemaCore.csproj"
             }
           }
         }

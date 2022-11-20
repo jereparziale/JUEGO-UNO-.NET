@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaUI", "..\SistemaUI\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uno.Test", "..\Uno.Test\Uno.Test.csproj", "{7883A8D6-97F6-450C-9143-4FF9CB972939}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixCore.Test", "..\..\ejerciciosclase-2d-segundaParte\LaboSegundaParte\11-pruebas_unitarias\NetflixApp-Master\NetflixCore.Test\NetflixCore.Test.csproj", "{D7F5BF6E-A20A-4677-9BB0-FD2DC755F01F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{7883A8D6-97F6-450C-9143-4FF9CB972939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7883A8D6-97F6-450C-9143-4FF9CB972939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7883A8D6-97F6-450C-9143-4FF9CB972939}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7F5BF6E-A20A-4677-9BB0-FD2DC755F01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7F5BF6E-A20A-4677-9BB0-FD2DC755F01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7F5BF6E-A20A-4677-9BB0-FD2DC755F01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7F5BF6E-A20A-4677-9BB0-FD2DC755F01F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

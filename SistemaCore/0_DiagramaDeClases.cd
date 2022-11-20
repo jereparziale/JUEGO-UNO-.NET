@@ -1,51 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SistemaCore.CartaComodin" Collapsed="true">
-    <Position X="10.75" Y="2.5" Width="1.5" />
+  <Class Name="SistemaCore.Baraja" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AABAAAAAAAAEAEgAAAABSAAFAEAGBAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Baraja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.CartaAccion" Collapsed="true">
+    <Position X="1.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAAQAAAAEAAAEiIAAAAiAAAAABIAQAAQAGAAABAg=</HashCode>
+      <FileName>CartaAccion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SistemaCore.CartaComodin" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAEAIAAAACAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>CartaComodin.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SistemaCore.Sistema" Collapsed="true">
-    <Position X="4.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Sistema.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SistemaCore.Persona" Collapsed="true">
-    <Position X="1.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>Persona.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SistemaCore.Jugador" Collapsed="true">
-    <Position X="0.5" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAFAAAAAAAAAAAAAAAAAAAgAIAAAAGAAAA=</HashCode>
-      <FileName>Jugador.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SistemaCore.SalaDeJuego" Collapsed="true">
-    <Position X="4.5" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAEAAEABAAAAAAAACAAAACAAAAIAAA=</HashCode>
-      <FileName>SalaDeJuego.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SistemaCore.CartaNumerica" Collapsed="true">
-    <Position X="9" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAEgAAAAAAAEAABAAAAAAAACAAAEAg=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAEgIAAAACAEAABAAAAAAAACAAAEAg=</HashCode>
       <FileName>CartaNumerica.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="SistemaCore.Sistema" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEAAAQQAAAAAAAAAgACAAAQIgABEWABAEAgAQABA=</HashCode>
+      <FileName>Sistema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.Usuario" Collapsed="true">
+    <Position X="6" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAQAAAAGAAAAAgAAEIAAABCAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccesoADatos.UsuariosDAO" Collapsed="true">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAABAAAAAAQAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsuariosDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.SalaDeJuego" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAIkABEAAEABIABAgBEAAAAAAAAAABYAAA=</HashCode>
+      <FileName>SalaDeJuego.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.Partida" Collapsed="true">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAsABIgBABCNCABEwBAAFAAAAAAAACAgABAAEAEYAAA=</HashCode>
+      <FileName>Partida.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccesoADatos.PartidasDAO" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAgAAAABgAAQAAQAAAAIAAAAAAAAJAA=</HashCode>
+      <FileName>PartidasDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.Serializadora&lt;T&gt;" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEBAAAAAAAAAAAAAACAAAAAAAAAQAIAAAAAAAAAAA=</HashCode>
+      <FileName>Serializadora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.ManejadorArchivo" Collapsed="true">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ManejadorArchivos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.Jugador" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAFAAAAAAQAAAAEAAAAAAAgAIAAAAGAAAA=</HashCode>
+      <FileName>Jugador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaCore.Configuracion" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Configuracion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SistemaCore.ICarta" Collapsed="true">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICarta.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SistemaCore.EEstadosPartidas" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAABAAgAA=</HashCode>
+      <FileName>EEstadosPartidas.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Enum Name="SistemaCore.EColores" Collapsed="true">
-    <Position X="10" Y="4" Width="1.5" />
+    <Position X="4" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAEAAQQAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>EColores.cs</FileName>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zC4/Cb+kHseYrjC9wHsKJO4Can0G43g4V+D41KxZZUYRzylPE6D2nMAEgI9iCpSB0FwQzzN+uGXx3yMgYrg1Iw==",
+  "dgSpecHash": "VNloDLyQbg83uuQQM95YL1BpGVY6p3kWX9OvevFg8KBuqbUAQRkiHUCEaj9dNyOMTinhHx634SPGXoHK8SguYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaUI\\SistemaUI.csproj",
+  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaUI\\SistemaUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jerel\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\jerel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

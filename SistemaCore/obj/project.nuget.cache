@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9tyVQaV3JsH+IOUmzW91GUBp7sHTOCI3yCzSgcJEd1oJu0FEKDl/uOUc4Q2Y3eaGBEn87qTJDCs49L9Fz0nclg==",
+  "dgSpecHash": "jP4K/Pnv/a+kbvDtZh33bkcR8FL4ERJ1vuDWBon+jeJ7ZZu4KoRbIunBpbH2ZzZGudBI6xKe0tKrIrQjb7xa8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj",
+  "projectFilePath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaCore\\SistemaCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jerel\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\jerel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

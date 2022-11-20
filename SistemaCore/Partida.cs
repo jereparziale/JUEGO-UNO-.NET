@@ -17,7 +17,6 @@ namespace SistemaCore
         int manosJugadas;
         EEstadosPartidas estadoPartida;
         StringBuilder sbMensajeJuego;
-        StringBuilder sbMensajeCartasEnMesa;
         public delegate void EventoUI(string x,ICarta b);
         public event EventoUI EventoModificarUI;
         int cantidadMasCuatroUsados;
@@ -28,7 +27,6 @@ namespace SistemaCore
         public Partida(Jugador jugador1, Jugador jugador2)
         {
             this.sbMensajeJuego = new StringBuilder();
-            this.sbMensajeCartasEnMesa = new StringBuilder();
             this.jugador1 = jugador1;
             this.jugador2 = jugador2;
             this.baraja = new Baraja();
@@ -67,7 +65,6 @@ namespace SistemaCore
         public Jugador Jugador2 { get => jugador2; set => jugador2 = value; }
         public StringBuilder SbMensajeJuego { get => sbMensajeJuego; set => sbMensajeJuego = value; }
         public EEstadosPartidas EstadoPartida { get => estadoPartida; set => estadoPartida = value; }
-        public StringBuilder SbMensajeCartasEnMesa { get => sbMensajeCartasEnMesa; set => sbMensajeCartasEnMesa = value; }
         public int CantidadMasCuatroUsados { get => cantidadMasCuatroUsados;  }
         public int CantidadMasDosUsados { get => cantidadMasDosUsados;  }
         public int CantidadBloqueoReversa { get => cantidadBloqueoReversa;}
@@ -112,7 +109,6 @@ namespace SistemaCore
             Jugador jugadorMano;
             Jugador jugadorContrario;
             bool juegaOtraVez = false;
-            sbMensajeCartasEnMesa.Append($"{CartaEnMesa}{Environment.NewLine}");
             if (EventoModificarUI is not null)
             {
                 EventoModificarUI(sbMensajeJuego.ToString(), CartaEnMesa);
@@ -137,7 +133,7 @@ namespace SistemaCore
                 Task.Delay(500).Wait();
                 juegaOtraVez = false;
                 EvaluarCasoAJugar(jugadorMano, out casoDeJuego, out cartaAJugar);
-                sbMensajeJuego.Append(Jugar(casoDeJuego, jugadorMano, jugadorContrario, cartaAJugar,out juegaOtraVez));
+                sbMensajeJuego.Append(JugarCasoEvualuado(casoDeJuego, jugadorMano, jugadorContrario, cartaAJugar,out juegaOtraVez));
                 
                 //ROMPO BUCLE PARA QUE SOLO LEVANTE UNA CARTA Y PASE TURNO AL NO PODER JGUAR
                 if (cantidadVecesTomarCarta >= 1 && casoDeJuego==-1)
@@ -254,7 +250,7 @@ namespace SistemaCore
         }
 
 
-        public string Jugar (int caso,Jugador jugador, Jugador jugadorContrario,ICarta carta,out bool tiraOtraVez)
+        public string JugarCasoEvualuado(int caso,Jugador jugador, Jugador jugadorContrario,ICarta carta,out bool tiraOtraVez)
         {
             tiraOtraVez=false;
             StringBuilder sbMensaje = new StringBuilder();

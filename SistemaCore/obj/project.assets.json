@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj",
+      "projectUniqueName": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaCore\\SistemaCore.csproj",
       "projectName": "SistemaCore",
-      "projectPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\SistemaCore.csproj",
+      "projectPath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaCore\\SistemaCore.csproj",
       "packagesPath": "C:\\Users\\jerel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jerel\\source\\repos\\parziale.jeremias.segundoparcial\\SistemaCore\\obj\\",
+      "outputPath": "C:\\Users\\jerel\\source\\repos\\lab_tpParcial2\\SistemaCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jerel\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -61,13 +61,16 @@ namespace SistemaCore
                 Task.Delay(2000).Wait();
                 PartidaEnJuego.JugarMano();
                 contador++;
-            } while (contador < Sistema.Configuracion.CantidadDeManos && (jugador1.CartasRestantes > 0 && jugador2.CartasRestantes > 0) && !cT.IsCancellationRequested);
+            } while (contador < Sistema.Configuracion.CantidadDeManos && (jugador1.CartasRestantes > 0 
+            && jugador2.CartasRestantes > 0) && !cT.IsCancellationRequested);
             
             if(cT.IsCancellationRequested)
             {
                 PartidaEnJuego.EstadoPartida = EEstadosPartidas.Cancelado;
                 PartidaEnJuego.SbMensajeJuego.Append("----------PARTIDA CANCELADA----------");
-                ECancelarFinalizarPartida(PartidaEnJuego.SbMensajeJuego.ToString(),null);
+
+                if(ECancelarFinalizarPartida is not null)
+                    ECancelarFinalizarPartida(PartidaEnJuego.SbMensajeJuego.ToString(),null);
             }
             else
             {

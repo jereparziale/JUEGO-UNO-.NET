@@ -48,7 +48,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(256, 33);
+            this.lblTitulo.Size = new System.Drawing.Size(248, 33);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "RESULTADO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,7 +60,7 @@
             this.lblNombreGanador.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblNombreGanador.Location = new System.Drawing.Point(0, 33);
             this.lblNombreGanador.Name = "lblNombreGanador";
-            this.lblNombreGanador.Size = new System.Drawing.Size(256, 30);
+            this.lblNombreGanador.Size = new System.Drawing.Size(248, 30);
             this.lblNombreGanador.TabIndex = 1;
             this.lblNombreGanador.Text = "Empate";
             this.lblNombreGanador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -72,7 +72,7 @@
             this.lblCartasGanador.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblCartasGanador.Location = new System.Drawing.Point(0, 63);
             this.lblCartasGanador.Name = "lblCartasGanador";
-            this.lblCartasGanador.Size = new System.Drawing.Size(256, 30);
+            this.lblCartasGanador.Size = new System.Drawing.Size(248, 30);
             this.lblCartasGanador.TabIndex = 2;
             this.lblCartasGanador.Text = "Cartas Restantes: xx";
             this.lblCartasGanador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -84,7 +84,7 @@
             this.lblCartasPerdedor.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblCartasPerdedor.Location = new System.Drawing.Point(0, 123);
             this.lblCartasPerdedor.Name = "lblCartasPerdedor";
-            this.lblCartasPerdedor.Size = new System.Drawing.Size(256, 26);
+            this.lblCartasPerdedor.Size = new System.Drawing.Size(248, 26);
             this.lblCartasPerdedor.TabIndex = 4;
             this.lblCartasPerdedor.Text = "Cartas Restantes: xx";
             this.lblCartasPerdedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -96,7 +96,7 @@
             this.lblNombrePerdedor.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblNombrePerdedor.Location = new System.Drawing.Point(0, 93);
             this.lblNombrePerdedor.Name = "lblNombrePerdedor";
-            this.lblNombrePerdedor.Size = new System.Drawing.Size(256, 30);
+            this.lblNombrePerdedor.Size = new System.Drawing.Size(248, 30);
             this.lblNombrePerdedor.TabIndex = 3;
             this.lblNombrePerdedor.Text = "Empate";
             this.lblNombrePerdedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,7 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(89)))), ((int)(((byte)(156)))));
-            this.ClientSize = new System.Drawing.Size(256, 316);
+            this.ClientSize = new System.Drawing.Size(248, 308);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnJugar);
@@ -195,8 +195,6 @@
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmFinPartida";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFinPartida";
             this.Load += new System.EventHandler(this.FrmFinPartida_Load);

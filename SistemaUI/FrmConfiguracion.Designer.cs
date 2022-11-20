@@ -60,7 +60,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Cantidad de manos a Jugar:";
+            this.label1.Text = "Cantidad de manos a JugarCasoPropuesto:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
