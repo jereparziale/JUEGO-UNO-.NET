@@ -118,6 +118,11 @@ Fue aplicado para lanzar una nueva tarea al presionar el botón jugar y agregar 
 #####Referencias
 SalaDeJuego
 
+###Unit Testing
+Por una falta de organizacion y tiempo considero que alcance a unicamente probar el 50% de las clases, en los casos que se aplico permitia un mejor entendimiento del metodo, vista de errores y dando lugar a una refactorizacion del metodo para hacerlo mas eficiente.
+#####Referencias
+UnoTest
+
 
 
 
